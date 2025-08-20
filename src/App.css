@@ -130,3 +130,55 @@
   background-color: #ddd; /* hover effect */
 }
 
+/* Phone View (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .App {
+    max-width: 100%;
+    height: 90vh;
+    padding: 15px;
+    border-radius: 0;
+  }
+
+  .chat-window {
+    height:75vh; /* slightly taller chat area */
+    padding: 6px;
+    font-size: 14px;
+  }
+
+  .message-text {
+    max-width: 95%;
+    padding: 6px 8px;
+    font-size: 14px;
+  }
+
+  .input-area {
+    /* flex-direction: column; */
+    gap: 5px;
+  }
+
+  .input-area input {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .input-area button {
+    width: 20%;
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .header {
+    /* flex-direction: column; */
+    gap: 10px;
+  }
+
+  .header button {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    margin-right: 0;
+  }
+}
+
+
