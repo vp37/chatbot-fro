@@ -63,7 +63,7 @@ function App() {
   const chatEndRef = useRef(null);
 
   // Backend URL - set only production URL here
-  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "http://chatbot-bac-ulai.onrender.com";
+  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "https://chatbot-bac-1.onrender.com";
 
   const sendMessage = async () => {
     if (!input) return;
