@@ -62,36 +62,31 @@ function App() {
   const [darkMode, setDarkMode] = useState(false);
   const chatEndRef = useRef(null);
 
+  // Backend URL - set only production URL here
+  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "http://chatbot-bac-ulai.onrender.com";
+
   const sendMessage = async () => {
     if (!input) return;
 
-    // Add user's message
     const newMessages = [...messages, { sender: "user", text: input }];
     setMessages(newMessages);
 
     try {
-      // Send message to backend
-      const res = await axios.post("http://127.0.0.1:8000/chat/", {
+      const res = await axios.post(`${BACKEND_URL}/chat/`, {
         message: input,
       });
-
-      // Add bot's response
+      setMessages([...newMessages, { sender: "bot", text: res.data.reply }]);
+      setInput("");
+    } catch (err) {
+      console.error(err);
       setMessages([
         ...newMessages,
-        { sender: "bot", text: res.data.reply || "No reply received" },
-      ]);
-    } catch (error) {
-      console.error("Error sending message:", error);
-      setMessages([
-        ...newMessages,
-        { sender: "bot", text: "Error: Could not get response" },
+        { sender: "bot", text: "Error: Could not reach server." },
       ]);
     }
-
-    setInput("");
   };
 
-  // Scroll to latest message
+  // Scroll to bottom when messages update
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
@@ -128,5 +123,4 @@ function App() {
 }
 
 export default App;
-
 
