@@ -55,6 +55,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
 import "../App.css";
+import botImage from '../images/egps3.jpg'
 
 function App() {
   const [messages, setMessages] = useState([]);
@@ -118,6 +119,13 @@ function App() {
         />
         <button onClick={sendMessage}>Send</button>
       </div>
+
+      <div className="chat-image">
+    <img 
+      src={botImage} 
+    />
+  </div>
+
     </div>
   );
 }
