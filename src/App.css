@@ -134,13 +134,13 @@
 @media screen and (max-width: 480px) {
   .App {
     max-width: 100%;
-    height: 90vh;
-    padding: 15px;
-    border-radius: 0;
+    height: 80vh;
+    padding: 5px;
+    border-radius: 5px;
   }
 
   .chat-window {
-    height:75vh; /* slightly taller chat area */
+    height:65vh; /* slightly taller chat area */
     padding: 6px;
     font-size: 14px;
   }
