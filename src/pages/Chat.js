@@ -43,7 +43,7 @@ function App() {
   return (
     <div className={`App ${darkMode ? "dark" : "light"}`}>
       <div className="header">
-        <h2>Bot 🤖</h2>
+        <h2>Chatty...🤖</h2>
         <button onClick={() => setDarkMode(!darkMode)}>
           {darkMode ? "🌙" : "☀️"}
         </button>
